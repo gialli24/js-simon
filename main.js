@@ -66,6 +66,10 @@ submitEl.addEventListener("click", function(e) {
 
         /* Log found or not */
         if (valuesToGuess.includes(userValue)) {
+
+            const foundIndex = valuesToGuess.indexOf(userValue);
+            valuesToGuess.splice(foundIndex);
+
             console.log("Indovinato: " + userValue);
             foundCounter++;
         }
