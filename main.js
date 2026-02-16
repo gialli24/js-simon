@@ -13,6 +13,7 @@ for (let i = 0; i < n_values; i++) {
 /* DOM nodes */
 const inputsEl = document.querySelectorAll(".mem-input");
 const submitEl = document.getElementById("submit-btn");
+const messageEl = document.getElementById("message");
 
 /* Firstly show all values inside inputs */
 for (let i = 0; i < valuesToGuess.length; i++) {
@@ -33,8 +34,8 @@ const timeoutId = setTimeout(function() {
 }, waitingTime)
 
 /* Handle submit button event */
-submitEl.addEventListener("click", function() {
-    console.log("ciao");
+submitEl.addEventListener("click", function(e) {
+    e.preventDefault();
     
     /* Store user input values */
     for (let i = 0; i < inputsEl.length; i++) {
@@ -45,6 +46,8 @@ submitEl.addEventListener("click", function() {
             userValues.push(input);
         } else {
             console.log("Errore, puoi inserire solo interi tra 1 e 9");
+            messageEl.className = "text-danger";
+            messageEl.innerText = "Errore, puoi inserire solo interi tra 1 e 9";
             return;
         }
     }
@@ -75,8 +78,14 @@ submitEl.addEventListener("click", function() {
 
     /* Result message */
     if (foundCounter === n_values) {
-        console.log("Hai Vinto!");
+        console.log(`Hai Vinto! ${foundCounter} su ${n_values}`);
+        
+        messageEl.className = "text-success";
+        messageEl.innerText = `Hai Vinto! ${foundCounter} su ${n_values}`;
     } else {
         console.log(`Hai indovinato ${foundCounter} valori su ${n_values}`);
+        
+        messageEl.className = "text-danger";
+        messageEl.innerText = `Hai Perso! Hai indovinatto ${foundCounter} su ${n_values}`;
     }
 })

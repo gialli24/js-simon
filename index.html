@@ -11,15 +11,26 @@
 <body>
     
     <main class="app-main">
-        <h1>Ricorda i Numeri!</h1>
+        <div class="container d-flex flex-column gap-4 align-items-center justify-content-center vh-100">
+            <div class="title text-center">
+                <h1>Ricorda i Numeri!</h1>
+                <p class="text-secondary">Hai 30 secondi per memorizzare i numeri, poi inseriscili senza dare importanza all'ordine e scopri se hai vinto!</p>
+            </div>
 
-        <input type="number" id="mem-1" class="mem-input" disabled>
-        <input type="number" id="mem-2" class="mem-input" disabled>
-        <input type="number" id="mem-3" class="mem-input" disabled>
-        <input type="number" id="mem-4" class="mem-input" disabled>
-        <input type="number" id="mem-5" class="mem-input" disabled>
+            <form class="d-flex flex-column gap-4 justify-content-center">
+                <div class="d-flex gap-4">
+                    <input type="text" id="mem-1" class="mem-input form-control text-center" style="height: 100px;" disabled>
+                    <input type="text" id="mem-2" class="mem-input form-control text-center" disabled>
+                    <input type="text" id="mem-3" class="mem-input form-control text-center" disabled>
+                    <input type="text" id="mem-4" class="mem-input form-control text-center" disabled>
+                    <input type="text" id="mem-5" class="mem-input form-control text-center" disabled>
+                </div>
 
-        <button type="submit" id="submit-btn" disabled>Invia</button>
+                <button type="submit" id="submit-btn" class="btn btn-primary" disabled>Tenta la sorte!</button>
+            </form>
+
+            <span id="message"></span>
+        </div>
     </main>
     <!-- /.app-main -->
 
