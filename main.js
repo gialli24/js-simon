@@ -4,9 +4,14 @@ const userValues = [];
 const n_values = 5;
 const waitingTime = 3000;
 
-/* Generate random numbers */
+/* Generate random numbers without repetitions*/
 for (let i = 0; i < n_values; i++) {
-    const randomValue = Math.floor(Math.random() * 9) + 1;
+    let randomValue = 0;
+
+    do {
+        randomValue = Math.floor(Math.random() * 9) + 1;
+    } while(valuesToGuess.includes(randomValue));
+
     valuesToGuess.push(randomValue);
 }
 
