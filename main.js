@@ -81,6 +81,6 @@ submitEl.addEventListener("click", function(e) {
         console.log(`Hai indovinato ${foundCounter} valori su ${n_values}`);
         
         messageEl.className = "text-danger";
-        messageEl.innerText = `Hai Perso! Hai indovinatto ${foundCounter} su ${n_values}`;
+        messageEl.innerText = `Hai Perso! Hai indovinato ${foundCounter} su ${n_values}`;
     }
 })
