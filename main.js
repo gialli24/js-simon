@@ -58,19 +58,9 @@ submitEl.addEventListener("click", function(e) {
     /* Check values */
     for (let i = 0; i < userValues.length; i++) {
         const userValue = userValues[i];
-        let found = false;
-
-        for (let j = 0; j < valuesToGuess.length; j++) {
-            const guessValue = valuesToGuess[j];
-            
-            if (userValue === guessValue) {
-                found = true;
-                break;
-            }
-        }
 
         /* Log found or not */
-        if (found) {
+        if (valuesToGuess.includes(userValue)) {
             console.log("Indovinato: " + userValue);
             foundCounter++;
         }
